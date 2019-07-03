@@ -69,5 +69,6 @@ Vagrant.configure("2") do |config|
   # SHELL
   #
   config.vm.provision "shell", path: "install_chef.sh"
-  config.vm.provision "shell", path: "configure_chef.sh", privileged: false
+  config.vm.provision "file", source: "bashrc.d", destination: "~/.bashrc.d"
+  config.vm.provision "shell", path: "configure_chef.sh", privileged: false , args: "~/.bashrc"
 end
