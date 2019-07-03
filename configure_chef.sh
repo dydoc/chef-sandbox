@@ -13,7 +13,7 @@ echo "I'm running as user $USER"
 
 function enable_bashrcd() {
 	local BASH_PROFILE_FILE=${1}
-	cat <<EOF >> "${BASH_PROFILE_FILE}"
+	cat <<\EOF >> "${BASH_PROFILE_FILE}"
 ###begin enabling bashrc.d###
 # This churns through files in $HOME/.bashrc.d if they are executable.
 if [ -d $HOME/.bashrc.d ]; then
@@ -32,7 +32,7 @@ EOF
 function check_if_enabled_bashrcd() {
 	local  BASH_PROFILE_FILE=${1}
 
-	local  TEXT_TO_CHECK=$(cat <<END
+	local  TEXT_TO_CHECK=$(cat <<\END
 ###begin enabling bashrc.d###
 # This churns through files in $HOME/.bashrc.d if they are executable.
 if [ -d $HOME/.bashrc.d ]; then
