@@ -9,6 +9,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.box = "ubuntu/bionic64"
 
+
   ### folder settings ###
   conf['synced_folders'].each do | synced_folder_name, synced_folder_value |
     src = synced_folder_value['src']
