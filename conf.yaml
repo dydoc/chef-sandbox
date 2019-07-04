@@ -1,7 +1,11 @@
 synced_folders:
-  ironide_states:
+  chef_projects:
       src: '../chef-projects/'
       dst: '/srv/chef-projects/'
+      technology: nfs
+  vagrant_metadata:
+      src: '.vagrant'
+      dst: '/srv/vagrant_metadata/'
       technology: nfs
 
 forwarded_ports:

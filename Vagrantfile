@@ -33,8 +33,9 @@ Vagrant.configure("2") do |config|
   config.vm.provision "file", source: "bashrc.d", destination: "~/.bashrc.d"
   config.vm.provision "shell", path: "configure_chef.sh", privileged: false , args: "~/.bashrc"
 
+
   $script = <<-SCRIPT
-  sudo apt-get install -y git
+  sudo apt-get install -y git unzip 
   SCRIPT
   
   config.vm.provision "shell", inline: $script
