@@ -1,0 +1,18 @@
+synced_folders:
+  ironide_states:
+      src: '../chef-projects/'
+      dst: '/srv/chef-projects/'
+      technology: nfs
+
+forwarded_ports:
+  nome_app:
+    internal_port: 60000
+    external_port: 60000
+
+
+vagrant_plugin:
+  - reload
+  - vagrant-managed-servers
+
+machine:
+  ironhide: chef-sandbox
