@@ -1,4 +1,7 @@
 synced_folders:
+#  chef_projects:
+#      src: '../chef-projects/'
+#      dst: '/srv/chef-projects/'
   vagrant_metadata:
       src: '.vagrant'
       dst: '/srv/vagrant_metadata/'
