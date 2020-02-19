@@ -10,6 +10,9 @@ forwarded_ports:
   nome_app:
     internal_port: 60000
     external_port: 60000
+bashrcd:
+  chef:
+    source_file: "chef.sh"    
 
 vagrant_plugin:
   - reload
