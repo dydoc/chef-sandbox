@@ -9,8 +9,7 @@ forwarded_ports:
     external_port: 60000
 
 bashrcd:
-  chef:
-    source_file: "chef.sh"     
+     
 vagrant_plugin:
   - reload
 

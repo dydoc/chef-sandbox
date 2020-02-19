@@ -75,18 +75,15 @@ Vagrant.configure("2") do |config|
   #configure bashrc.d seletcing what you need
   config.vm.provision "shell", path: "configure_bashrcd.sh", privileged: false , args: "~/.bashrc"
 
-puts conf['bashrcd'].class
-puts 'ciao'
-if conf['bashrcd'].nil? then
-  puts "nothing to add to bashrc.d"
-else
-  puts "ciao2"
-  conf['bashrcd'].each do | name, filename |
-    source_filename = "bashrc.d/" + filename['source_file']
-    destination_filename = "~/" + "bashrc.d/" + name + ".bash"
-    config.vm.provision "file", source: source_filename, destination: destination_filename
-  end  
-end
+  if conf['bashrcd'].nil? then
+    puts "nothing to add to bashrc.d"
+  else
+    conf['bashrcd'].each do | name, filename |
+      source_filename = "bashrc.d/" + filename['source_file']
+      destination_filename = "~/" + "bashrc.d/" + name + ".bash"
+      config.vm.provision "file", source: source_filename, destination: destination_filename
+    end  
+  end
 
 
 
