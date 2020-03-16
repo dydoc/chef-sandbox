@@ -25,3 +25,33 @@ machine:
   ironhide: your_vm_name
   cpu: 4 # number of CPU
   memory: 1024 #Mib
+
+
+
+group:
+  k8smaster:
+    cardinality: 2
+    box_name: 'bento/ubuntu-18.04'
+    box_version:
+    network:
+      type:
+      subnet:
+    memory: 4
+    cpus: 2 
+    provisioner:
+      nome:
+        type:
+    synced_folders:
+  k8sworker:
+    cardinality: 2
+    box_name: 'bento/ubuntu-18.04'
+    box_version: 
+    network:
+      type:
+      subnet:
+    memory: 1
+    cpus:  3
+    provisioner:
+      nome:
+        type:
+    synced_folders:      
