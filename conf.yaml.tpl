@@ -34,7 +34,7 @@ group:
     box_name: 'bento/ubuntu-18.04'
     box_version:
     network:
-      type:
+      type: private
       subnet:
     memory: 4
     cpus: 2 

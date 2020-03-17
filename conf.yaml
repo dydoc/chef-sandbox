@@ -30,24 +30,49 @@ group:
     box_name: 'bento/ubuntu-18.04'
     box_version:
     network:
-      type:
-      subnet:
+      type: private_network
+      first_ip: "192.168.3.2"
+      name:
     memory: 4
     cpus: 2 
     provisioner:
       nome:
         type:
     synced_folders:
+    forwarded_ports:
+      nome_app:
+        internal_port: 6000
+        external_port: 6000
   k8sworker:
     cardinality: 2
     box_name: 'bento/ubuntu-18.04'
     box_version: 
     network:
-      type:
-      subnet:
+      type: private_network
+      first_ip: '192.168.3.10'
+      name:
     memory: 1
     cpus:  3
     provisioner:
       nome:
         type:
-    synced_folders:      
+    synced_folders:
+      vagrant_metadata:
+        src: '.vagrant'
+        dst: '/srv/vagrant_metadata/'      
+    forwarded_ports:  
+  k8lb:
+    cardinality: 1
+    box_name: 'bento/ubuntu-18.04'
+    box_version: 
+    network:
+      type: private_network
+      first_ip: '192.168.3.20'
+      name:
+    memory: 0.5
+    cpus:  1
+    provisioner:
+      nome:
+        type:
+    synced_folders:
+    forwarded_ports:
