@@ -1,1 +1,1 @@
-# chef-sandbox
+# sandbox
